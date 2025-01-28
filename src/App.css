@@ -1,0 +1,167 @@
+/* General Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  color: white;
+  min-height: 100vh;
+  height: 100%; /* Asegura que el body ocupe toda la altura */
+  width: 100%;  /* Asegura que el body ocupe todo el ancho */
+  transition: background-color 0.5s ease-in-out;
+  display: block;  /* Elimina el flexbox para el body */
+}
+
+/* Contenedor principal */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex-grow: 1; /* Permite que el contenedor ocupe el espacio restante */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+}
+
+/* Header */
+.app-header {
+  padding: 1rem 0;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+/* Animación para el temblor */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
+  }
+  20% {
+    transform: translateX(30px); /* Movimiento violento hacia la derecha */
+  }
+  30% {
+    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
+  }
+  40% {
+    transform: translateX(30px); /* Movimiento violento hacia la derecha */
+  }
+  50% {
+    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
+  }
+  60% {
+    transform: translateX(30px); /* Movimiento violento hacia la derecha */
+  }
+  70% {
+    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
+  }
+  80% {
+    transform: translateX(30px); /* Movimiento violento hacia la derecha */
+  }
+  90% {
+    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
+  }
+  100% {
+    transform: translateX(30px); /* Movimiento violento hacia la derecha */
+  }
+}
+
+/* Clase para el temblor */
+.shake {
+  animation: shake 1s ease-in-out; /* Temblor con más intensidad y duración */
+  background-color: #ff0000; /* Rojo brillante */
+  color: white; /* Texto blanco para contraste */
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Sombra roja intensa y difusa */
+  animation: shake 1s ease-in-out infinite; /* Parpadeo constante */
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Aceleración más dramática */
+}
+
+/* Botones generales */
+.btn {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  transform: translateY(-3px); /* Efecto de elevación */
+}
+
+/* Colores y efectos específicos para cada botón */
+.btn-green {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-green:hover {
+  background-color: #218838;
+}
+
+.btn-red {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-red:hover {
+  background-color: #c82333;
+}
+
+.btn-blue {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #0056b3;
+}
+
+.btn-gray {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-gray:hover {
+  background-color: #5a6268;
+}
+.text-center p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
