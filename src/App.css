@@ -23,11 +23,9 @@ body, html {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  flex-grow: 1; /* Permite que el contenedor ocupe el espacio restante */
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
-  min-height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  min-height: 100vh;
 }
 
 /* Header */
@@ -60,53 +58,6 @@ body, html {
 
 .app-footer p {
   margin: 0;
-}
-
-/* Animación para el temblor */
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  10% {
-    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
-  }
-  20% {
-    transform: translateX(30px); /* Movimiento violento hacia la derecha */
-  }
-  30% {
-    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
-  }
-  40% {
-    transform: translateX(30px); /* Movimiento violento hacia la derecha */
-  }
-  50% {
-    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
-  }
-  60% {
-    transform: translateX(30px); /* Movimiento violento hacia la derecha */
-  }
-  70% {
-    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
-  }
-  80% {
-    transform: translateX(30px); /* Movimiento violento hacia la derecha */
-  }
-  90% {
-    transform: translateX(-30px); /* Movimiento violento hacia la izquierda */
-  }
-  100% {
-    transform: translateX(30px); /* Movimiento violento hacia la derecha */
-  }
-}
-
-/* Clase para el temblor */
-.shake {
-  animation: shake 1s ease-in-out; /* Temblor con más intensidad y duración */
-  background-color: #ff0000; /* Rojo brillante */
-  color: white; /* Texto blanco para contraste */
-  box-shadow: 0 0 40px rgba(255, 0, 0, 0.8); /* Sombra roja intensa y difusa */
-  animation: shake 1s ease-in-out infinite; /* Parpadeo constante */
-  animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Aceleración más dramática */
 }
 
 /* Botones generales */
@@ -161,7 +112,60 @@ body, html {
 .btn-gray:hover {
   background-color: #5a6268;
 }
-.text-center p {
-  font-size: 1.5rem;
-  font-weight: bold;
+
+/* Pantalla parpadea en rojo */
+@keyframes screen-flash {
+  0% { background-color: rgba(255, 0, 0, 0.8); }
+  100% { background-color: transparent; }
+}
+
+.screen-shake {
+  animation: screen-flash 0.8s ease-in-out;
+}
+
+/* Temblor aún más violento */
+@keyframes intense-shake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-20px); }
+  20% { transform: translateX(20px); }
+  30% { transform: translateX(-20px); }
+  40% { transform: translateX(20px); }
+  50% { transform: translateX(-20px); }
+  60% { transform: translateX(20px); }
+  70% { transform: translateX(-20px); }
+  80% { transform: translateX(20px); }
+  90% { transform: translateX(-20px); }
+}
+
+.shake {
+  animation: intense-shake 0.8s ease-in-out;
+  color: white;
+  background-color: #ff0000;
+  box-shadow: 0 0 40px rgba(255, 0, 0, 0.9);
+}
+
+/* Fondo rojo */
+.error-background {
+  background-color: rgba(255, 0, 0, 0.9); /* Fondo rojo con opacidad más intensa */
+}
+/* Efecto de temblor */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.3s ease infinite;
+}
+
+/* Efecto de parpadeo de pantalla */
+.error-background {
+  background-color: red !important;
+}
+
+.screen-shake {
+  animation: shake 0.5s ease infinite;
 }
